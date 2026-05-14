@@ -55,7 +55,7 @@ const ReposList = ({ isPreview = false }: { isPreview?: boolean }) => {
 
   return (
     <div className="pb-4 w-full md:px-3">
-      <div className="flex items-center justify-between mb-4 pb-4 px-2 border-b border-slate-200 min-h-[50px]">
+      <div className="flex items-center justify-between mb-4 pb-4 px-2 border-b border-slate-200 min-h-12.5">
         <div className="flex items-center gap-1">
           <Icon
             icon="mdi:github"
