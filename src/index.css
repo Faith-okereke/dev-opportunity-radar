@@ -1,19 +1,22 @@
 @import "tailwindcss";
+
 @theme {
   --color-primary: 18, 18, 20;
   --color-light-primary: 144, 238, 144;
   --color-accent: 59 130 246;
   --color-text: 0 0 0;
   --color-border: 19, 21, 33;
-  --color-light:8, 10, 14
+  --color-light: 8, 10, 14
 }
 
 /* Animations */
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -22,6 +25,7 @@
 @theme {
   --animate-float: float 3s ease-in-out infinite;
 }
+
 body {
   background-color: white;
   color: black;
@@ -44,4 +48,20 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(100, 116, 139, 0.9);
+}
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

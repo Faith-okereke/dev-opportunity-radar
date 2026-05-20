@@ -24,21 +24,21 @@ const WeeklyDigest = () => {
       companyCounts[j.company_name] = (companyCounts[j.company_name] || 0) + 1;
     }
   });
-  
+
   const topCompanies = Object.entries(companyCounts)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3)
     .map(entry => entry[0]);
 
   return (
-    <div className="w-full bg-gradient-to-r from-purple-100 to-white border border-purple-500/30 rounded-xl p-5 mb-6 shadow-lg shadow-purple-500/5 flex flex-col md:flex-row gap-6 items-center">
+    <div className="w-full border border-purple-500/30 rounded-xl p-5 mb-6 shadow-lg shadow-purple-500/5 flex flex-col md:flex-row gap-6 items-center">
       <div className="flex-1">
         <div className="flex items-center gap-2 mb-3">
           <Mail className="text-purple-400 w-5 h-5" />
           <h3 className="font-bold text-slate-900 text-lg tracking-wide">Weekly Market Digest</h3>
         </div>
         <p className="text-gray-600 text-sm mb-4">Here's what moved this week in your industry:</p>
-        
+
         <ul className="space-y-3">
           <li className="flex items-start gap-3">
             <TrendingUp className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
@@ -65,7 +65,7 @@ const WeeklyDigest = () => {
         <Mail className="w-8 h-8 text-purple-400 mb-2 opacity-80" />
         <h4 className="text-slate-900 font-medium mb-1">Get this in your inbox</h4>
         <p className="text-xs text-gray-500 mb-4">Never miss a massive market movement.</p>
-        <button className="w-full bg-purple-600 hover:bg-purple-500 text-slate-900 font-medium py-2 rounded-lg text-sm transition-colors">
+        <button className="w-full bg-purple-600 hover:bg-purple-500 text-white font-medium py-2 rounded-lg text-sm transition-colors">
           Subscribe to Digest
         </button>
       </div>

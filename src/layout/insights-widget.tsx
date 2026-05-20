@@ -18,6 +18,22 @@ const TECH_KEYWORDS = [
   "Java"
 ];
 
+const ROADMAP_LINKS: Record<string, string> = {
+  "TypeScript": "https://roadmap.sh/typescript",
+  "Python": "https://roadmap.sh/python",
+  "Go": "https://roadmap.sh/golang",
+  "Rust": "https://roadmap.sh/rust",
+  "JavaScript": "https://roadmap.sh/javascript",
+  "React": "https://roadmap.sh/frontend",
+  "Node": "https://roadmap.sh/backend",
+  "Vue": "https://roadmap.sh/frontend",
+  "AWS": "https://roadmap.sh/aws",
+  "Docker": "https://roadmap.sh/docker",
+  "Kubernetes": "https://roadmap.sh/kubernetes",
+  "C++": "https://roadmap.sh/cpp",
+  "Java": "https://roadmap.sh/java"
+};
+
 const InsightsWidget = () => {
   const { data: jobs = [] } = useQuery({
     queryKey: ["jobsData", "All"],
@@ -87,18 +103,18 @@ const InsightsWidget = () => {
   });
 
   return (
-    <div className="w-full bg-gradient-to-r from-[rgb(var(--color-accent))]/20 to-white border border-[rgb(var(--color-accent))]/30 rounded-xl p-5 mb-6 shadow-lg shadow-[rgb(var(--color-accent))]/5">
+    <div className="w-full border border-[rgb(var(--color-accent))]/30 rounded-xl p-5 mb-6 shadow-lg shadow-[rgb(var(--color-accent))]/5">
       <div className="flex items-center gap-2 mb-3">
         <Lightbulb className="text-[rgb(var(--color-accent))] w-5 h-5" />
         <h3 className="font-bold text-slate-900 text-lg tracking-wide">What should I learn next?</h3>
       </div>
-      
+
       <p className="text-gray-600 leading-relaxed text-sm md:text-base">
         Based on this week's live data:{" "}
-        <span className="font-semibold text-slate-900 px-1 bg-slate-100 rounded"><Code className="w-4 h-4 inline mr-1 mb-0.5"/>{topJobTech}</span>{" "}
+        <a href={ROADMAP_LINKS[topJobTech]} target="_blank" rel="noopener noreferrer" className="font-semibold text-slate-900 px-1 bg-slate-100 rounded hover:bg-slate-200 hover:text-[rgb(var(--color-accent))] transition-colors inline-flex items-center"><Code className="w-4 h-4 inline mr-1 mb-0.5" />{topJobTech}</a>{" "}
         appears in <strong className="text-[rgb(var(--color-accent))]">{topJobPercent}%</strong> of all HN job postings. Meanwhile,{" "}
-        <span className="font-semibold text-slate-900 px-1 bg-slate-100 rounded"><TrendingUp className="w-4 h-4 inline mr-1 mb-0.5"/>{topRepoTech}</span>{" "}
-        is surging, trending across <strong className="text-blue-400">{topRepoCount}</strong> top repositories. 
+        <a href={ROADMAP_LINKS[topRepoTech]} target="_blank" rel="noopener noreferrer" className="font-semibold text-slate-900 px-1 bg-slate-100 rounded hover:bg-slate-200 hover:text-[rgb(var(--color-accent))] transition-colors inline-flex items-center"><TrendingUp className="w-4 h-4 inline mr-1 mb-0.5" />{topRepoTech}</a>{" "}
+        is surging, trending across <strong className="text-blue-400">{topRepoCount}</strong> top repositories.
         If you are looking to stay highly hireable and catch the next wave, focus your upskilling here.
       </p>
     </div>

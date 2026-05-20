@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "./store";
 import { Icon } from "@iconify/react";
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function App() {
   }, [pathname]);
   return (
     <div className="flex h-screen bg-white">
+      <Toaster />
       <SideMenu />
 
       <div className="flex-1 flex flex-col overflow-hidden">
